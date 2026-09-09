@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenAI Codex를 간단히 소개하는 페이지">
+  <title>Codex — 아이디어를 코드로</title>
+  <style>
+    :root{--ink:#101820;--paper:#f4f1ea;--lime:#c7ff4a;--line:#33414d;--muted:#a9b2b9}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--ink);color:var(--paper);font-family:Arial,"Noto Sans KR",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid var(--line)}
+    .logo{font-size:1.2rem;font-weight:800;letter-spacing:-.04em}
+    .logo span,.eyebrow{color:var(--lime)}
+    nav a{margin-left:24px;color:var(--muted);font-size:.9rem}
+    main{padding:86px 0 64px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+    .eyebrow{font-family:monospace;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+    h1{font-size:clamp(3.4rem,8vw,7rem);line-height:.88;letter-spacing:-.075em;margin:18px 0 28px}
+    .lead{max-width:590px;color:#c8ced2;font-size:1.12rem;line-height:1.75}
+    .actions{display:flex;gap:12px;margin-top:36px}
+    .button{padding:14px 20px;border:1px solid var(--line);border-radius:6px;font-weight:700}
+    .primary{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+    .terminal{background:#0a1015;border:1px solid var(--line);border-radius:12px;box-shadow:18px 18px 0 #1d2a34;overflow:hidden}
+    .bar{padding:13px 16px;border-bottom:1px solid var(--line);color:#70808c;font-size:.75rem;letter-spacing:.12em}
+    pre{margin:0;padding:28px;min-height:280px;white-space:pre-wrap;color:#dfe6e9;font:14px/1.8 monospace}
+    pre b{color:var(--lime)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:96px}
+    article{background:var(--ink);padding:30px}
+    .num{color:var(--lime);font:12px monospace}
+    h2{font-size:1.25rem;margin:42px 0 12px}
+    article p{margin:0;color:var(--muted);line-height:1.65;font-size:.93rem}
+    footer{display:flex;justify-content:space-between;padding:28px 0 40px;border-top:1px solid var(--line);color:#778691;font-size:.8rem}
+    @media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;gap:48px}main{padding-top:56px}.cards{grid-template-columns:1fr;margin-top:72px}h1{font-size:4rem}.terminal{box-shadow:10px 10px 0 #1d2a34}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="logo" href="#">OPENAI <span>/ CODEX</span></a>
+    <nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#features">기능</a></nav>
+  </header>
+  <main class="wrap">
+    <section class="hero" id="about">
+      <div>
+        <p class="eyebrow">Your coding agent</p>
+        <h1>말하면,<br>코드가 됩니다.</h1>
+        <p class="lead">Codex는 코드를 탐색하고, 기능을 만들고, 오류를 고치며, 변경 사항을 검토하는 OpenAI의 코딩 에이전트입니다. 목표를 설명하면 프로젝트 안에서 함께 답을 찾아갑니다.</p>
+        <div class="actions">
+          <a class="button primary" href="https://learn.chatgpt.com/docs" target="_blank" rel="noopener">Codex 알아보기 ↗</a>
+          <a class="button" href="#features">할 수 있는 일 ↓</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Codex 작업 예시">
+        <div class="bar">CODEX / TASK</div>
+        <pre><b>›</b> 로그인 오류를 찾아서 고쳐줘
+
+  ✓ 프로젝트 구조 탐색
+  ✓ 원인 분석
+  ✓ 코드 수정
+  ✓ 테스트 실행
+
+<b>완료.</b> 변경 내용과 검증 결과를
+정리했습니다.</pre>
+      </div>
+    </section>
+    <section class="cards" id="features" aria-label="Codex 핵심 기능">
+      <article><span class="num">01 / UNDERSTAND</span><h2>코드를 이해합니다</h2><p>낯선 코드베이스를 살펴보고 구조와 흐름, 변경이 필요한 지점을 찾아냅니다.</p></article>
+      <article><span class="num">02 / BUILD</span><h2>직접 구현합니다</h2><p>새 기능부터 작은 수정까지 파일을 만들고 편집하며 아이디어를 결과물로 바꿉니다.</p></article>
+      <article><span class="num">03 / VERIFY</span><h2>끝까지 확인합니다</h2><p>테스트와 검토를 거쳐 동작을 확인하고, 무엇이 바뀌었는지 명확하게 설명합니다.</p></article>
+    </section>
+  </main>
+  <footer class="wrap"><span>CODEX · OPENAI</span><span>BUILD WITH INTENT.</span></footer>
+</body>
+</html>

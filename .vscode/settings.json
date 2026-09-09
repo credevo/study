@@ -1,3 +1,11 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "python-envs.pythonProjects": [
+        {
+            "path": "pythonStudy/chap06-1.py",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
 }

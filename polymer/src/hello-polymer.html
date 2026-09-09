@@ -1,0 +1,68 @@
+<link rel="import" href="https://cdn.jsdelivr.net/gh/Polymer/polymer@v1.11.3/polymer.html">
+
+<dom-module id="hello-polymer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .card {
+        padding: 28px;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-top: 0;
+        color: #1565c0;
+      }
+
+      button {
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 6px;
+        background: #1565c0;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+
+    <section class="card">
+      <h1>안녕하세요, [[name]]!</h1>
+      <p>버튼 클릭 횟수: <strong>[[count]]</strong></p>
+      <p>{{text}}</p>
+      <button type="button" on-tap="increment">클릭 테스트</button>
+    </section>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'hello-polymer',
+
+      properties: {
+        name: {
+          type: String,
+          value: 'Polymer'
+        },
+        count: {
+          type: Number,
+          value: 0
+        },
+        text : {
+          type : String,
+          value : ''
+        }
+      },
+
+      increment: function () {
+        this.set('count', this.count + 1);
+        this.async(function(){
+          this.set("text","바보야");
+        });
+          
+        }
+    });
+  </script>
+</dom-module>

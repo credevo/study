@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polymer 1.x Static Test</title>
+
+    <!-- Polymer 1.x가 사용하는 Web Components/HTML Imports 폴리필 -->
+    <script src="https://unpkg.com/webcomponents.js@0.7.24/webcomponents-lite.min.js"></script>
+
+    <!-- 직접 만든 Polymer 컴포넌트 -->
+    <link rel="import" href="src/hello-polymer.html">
+
+    <style>
+      body {
+        margin: 0;
+        background: #f3f5f8;
+        color: #202124;
+        font-family: Arial, "Malgun Gothic", sans-serif;
+      }
+
+      main {
+        width: min(680px, calc(100% - 32px));
+        margin: 64px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <hello-polymer name="Polymer 1.x"></hello-polymer>
+    </main>
+  </body>
+</html>

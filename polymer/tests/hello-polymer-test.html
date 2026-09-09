@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello-polymer 테스트</title>
+
+    <!-- Polymer 1.x의 HTML Imports와 Web Components를 지원하는 폴리필입니다. -->
+    <script src="https://unpkg.com/webcomponents.js@0.7.24/webcomponents-lite.min.js"></script>
+
+    <!-- 테스트할 컴포넌트를 불러옵니다. -->
+    <link rel="import" href="../src/hello-polymer.html">
+
+    <style>
+      body {
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: Arial, "Malgun Gothic", sans-serif;
+      }
+
+      #result-list {
+        padding: 0;
+        list-style: none;
+      }
+
+      #result-list li {
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 6px;
+      }
+
+      .pass {
+        background: #e8f5e9;
+        color: #1b5e20;
+      }
+
+      .fail {
+        background: #ffebee;
+        color: #b71c1c;
+      }
+
+      #fixture {
+        margin-top: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hello-polymer 자동 테스트</h1>
+    <p id="summary">Web Components가 준비되기를 기다리는 중입니다...</p>
+    <ul id="result-list"></ul>
+
+    <!-- fixture는 테스트 대상으로 사용할 실제 컴포넌트입니다. -->
+    <section id="fixture">
+      <h2>테스트 대상 화면</h2>
+      <hello-polymer id="subject" name="테스트 사용자"></hello-polymer>
+    </section>
+
+    <script>
+      // 성공한 테스트와 실패한 테스트의 개수를 저장합니다.
+      var passed = 0;
+      var failed = 0;
+
+      // 테스트 결과 한 건을 화면 목록과 개발자 도구 콘솔에 출력합니다.
+      function report(testName, error) {
+        var item = document.createElement('li');
+
+        if (error) {
+          failed += 1;
+          item.className = 'fail';
+          item.textContent = '실패: ' + testName + ' - ' + error.message;
+          console.error(testName, error);
+        } else {
+          passed += 1;
+          item.className = 'pass';
+          item.textContent = '성공: ' + testName;
+          console.log(testName);
+        }
+
+        document.querySelector('#result-list').appendChild(item);
+      }
+
+      // 조건이 거짓이면 Error를 발생시켜 테스트를 실패하게 합니다.
+      function assert(condition, message) {
+        if (!condition) {
+          throw new Error(message);
+        }
+      }
+
+      // 각각의 테스트를 실행하고 오류가 나더라도 다음 테스트를 계속 실행합니다.
+      function test(testName, testFunction) {
+        try {
+          testFunction();
+          report(testName);
+        } catch (error) {
+          report(testName, error);
+        }
+      }
+
+      // 모든 Web Components와 HTML Import가 준비된 뒤 테스트를 시작합니다.
+      window.addEventListener('WebComponentsReady', function () {
+        var subject = document.querySelector('#subject');
+
+        test('hello-polymer 엘리먼트가 생성된다', function () {
+          assert(subject.is === 'hello-polymer', 'Polymer 컴포넌트가 등록되지 않았습니다.');
+        });
+
+        test('name HTML 속성이 name 프로퍼티에 반영된다', function () {
+          assert(subject.name === '테스트 사용자', '실제 name 값: ' + subject.name);
+        });
+
+        test('count의 초기값은 0이다', function () {
+          assert(subject.count === 0, '실제 count 값: ' + subject.count);
+        });
+
+        test('increment()를 호출하면 count가 1 증가한다', function () {
+          subject.increment();
+          assert(subject.count === 1, 'increment 후 count 값: ' + subject.count);
+        });
+
+        test('버튼을 클릭하면 count가 다시 1 증가한다', function () {
+          var button = subject.root.querySelector('button');
+          button.click();
+          assert(subject.count === 2, '버튼 클릭 후 count 값: ' + subject.count);
+        });
+
+        document.querySelector('#summary').textContent =
+          '테스트 완료: 성공 ' + passed + '개, 실패 ' + failed + '개';
+      });
+    </script>
+  </body>
+</html>
