@@ -26,4 +26,5 @@
 
 | 질문 | 핵심 답변 |
 | --- | --- |
-| Windows에 Node.js를 어떻게 설치하는가? | `winget install --id OpenJS.NodeJS.LTS --exact`로 LTS 버전을 설치하고, 새 터미널에서 `node --version`과 `npm --version`으로 확인한다. 이번 설치에서는 Node.js `v24.19.0`, npm `11.17.0`을 검증했다. |
+| Windows에 Node.js를 어떻게 설치하는가? | `winget install --id OpenJS.NodeJS.LTS --exact`로 LTS 버전을 설치하고, 새 터미널에서 `node --version`과 `npm.cmd --version`으로 확인한다. 이번 설치에서는 Node.js `v24.19.0`, npm `11.17.0`을 검증했다. PowerShell 실행 정책이 `npm.ps1`을 막는 환경에서는 `npm.cmd`를 사용한다. |
+| 설치된 Node.js를 학습 도구 폴더로 옮길 수 있는가? | 실행 파일 전체를 버전별 도구 폴더로 복사해 먼저 검증하고, `NODE_HOME`과 사용자 `PATH`를 새 위치로 변경한 뒤 기존 MSI를 제거한다. 이 환경은 `tools/node-v24.19.0-win-x64`로 이전했다. |

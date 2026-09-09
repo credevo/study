@@ -64,7 +64,16 @@ winget install --id OpenJS.NodeJS.LTS --exact
 
 ```powershell
 node --version
-npm --version
+npm.cmd --version
 ```
 
-2026-09-10 기준 이 환경에서는 Node.js `v24.19.0`, npm `11.17.0`이 설치되었으며 실행 파일 경로는 `C:\Program Files\nodejs\`이다.
+2026-09-10 기준 이 환경에서는 Node.js `v24.19.0`, npm `11.17.0`이 설치되어 있다. 초기 MSI 설치를 포터블 구성으로 전환했으며 현재 실행 파일 경로와 사용자 환경 변수는 다음과 같다.
+
+```text
+NODE_HOME=D:\00000_DEV\study\tools\node-v24.19.0-win-x64
+PATH=D:\00000_DEV\study\tools\node-v24.19.0-win-x64;...
+```
+
+기존 `C:\Program Files\nodejs` MSI 설치는 새 경로의 실행 검증 후 제거했다. 전역 npm 패키지 저장 위치 `C:\Users\o\AppData\Roaming\npm`은 사용자 `PATH`에 유지한다.
+
+PowerShell 실행 정책으로 `npm.ps1`이 차단되는 환경에서는 정책을 임의로 완화하지 않고 `npm.cmd`를 사용하면 된다. 명령 프롬프트(`cmd.exe`)에서는 일반적으로 `npm`으로 실행할 수 있다.
