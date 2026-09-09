@@ -1,0 +1,6 @@
+9월 10, 2026 12:06:09 오전 org.apache.catalina.core.ApplicationContext log
+정보: SessionListener: contextDestroyed()
+9월 10, 2026 12:06:09 오전 org.apache.catalina.core.ApplicationContext log
+정보: ContextListener: contextDestroyed()
+9월 10, 2026 12:06:09 오전 org.apache.catalina.core.ApplicationContext log
+정보: Destroying Spring FrameworkServlet 'dispatcher'

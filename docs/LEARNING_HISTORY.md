@@ -21,3 +21,9 @@
 | HTML만 사용해 짧은 소개 페이지를 만들 수 있는가? | 가능하다. 한 HTML 파일 안에 시맨틱 마크업과 `<style>`을 함께 두면 별도 CSS·JavaScript 없이도 반응형 정적 페이지를 만들 수 있다. |
 
 관련 프로젝트 기록: [codex-intro 프로젝트 이력](../codex-intro/docs/PROJECT_HISTORY.md)
+
+## 2026-09-10 — Node.js 설치
+
+| 질문 | 핵심 답변 |
+| --- | --- |
+| Windows에 Node.js를 어떻게 설치하는가? | `winget install --id OpenJS.NodeJS.LTS --exact`로 LTS 버전을 설치하고, 새 터미널에서 `node --version`과 `npm --version`으로 확인한다. 이번 설치에서는 Node.js `v24.19.0`, npm `11.17.0`을 검증했다. |

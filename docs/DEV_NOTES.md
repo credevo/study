@@ -49,3 +49,22 @@ Spring MVC 3.2 같은 레거시 Spring은 `javax.servlet` 기반이다. Tomcat 1
 ### 단일 HTML 파일 구성
 
 작은 소개 페이지는 HTML 문서의 `<style>` 요소에 CSS를 포함하면 배포 파일 수를 줄일 수 있다. `header`, `main`, `section`, `article`, `footer` 같은 시맨틱 요소를 사용하고, `viewport` 메타 태그와 미디어 쿼리로 모바일 화면을 함께 지원한다.
+
+## Node.js
+
+### Windows LTS 설치
+
+Windows 패키지 관리자를 사용할 수 있으면 다음 명령으로 Node.js LTS와 npm을 함께 설치할 수 있다.
+
+```powershell
+winget install --id OpenJS.NodeJS.LTS --exact
+```
+
+설치 후 새 터미널을 열어 PATH 변경을 반영하고 버전을 확인한다.
+
+```powershell
+node --version
+npm --version
+```
+
+2026-09-10 기준 이 환경에서는 Node.js `v24.19.0`, npm `11.17.0`이 설치되었으며 실행 파일 경로는 `C:\Program Files\nodejs\`이다.

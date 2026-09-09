@@ -1,0 +1,12 @@
+9월 10, 2026 12:06:09 오전 org.apache.coyote.AbstractProtocol pause
+정보: 프로토콜 핸들러 ["http-apr-8080"]을(를) 일시 정지 중
+9월 10, 2026 12:06:09 오전 org.apache.catalina.core.StandardService stopInternal
+정보: 서비스 [Catalina]을(를) 중지시킵니다.
+9월 10, 2026 12:06:09 오전 org.springframework.web.context.support.XmlWebApplicationContext doClose
+정보: Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Sep 09 23:51:33 KST 2026]; root of context hierarchy
+9월 10, 2026 12:06:09 오전 org.springframework.beans.factory.support.DefaultListableBeanFactory destroySingletons
+정보: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@44873791: defining beans [homeController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,mvcPathMatcher,mvcUrlPathHelper,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+9월 10, 2026 12:06:09 오전 org.apache.coyote.AbstractProtocol stop
+정보: 프로토콜 핸들러 ["http-apr-8080"]을(를) 중지시킵니다.
+9월 10, 2026 12:06:09 오전 org.apache.coyote.AbstractProtocol destroy
+정보: 프로토콜 핸들러 ["http-apr-8080"]을(를) 소멸시킵니다.
